@@ -27,8 +27,8 @@ jobs:
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan
         env:
-          AWS_ACCESS_KEY_ID: ${{ AKIASGDCNOFPLIEFFW2F }}
-          AWS_SECRET_ACCESS_KEY: ${{ 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 }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Notify on Success
         if: success()
