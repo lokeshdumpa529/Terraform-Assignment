@@ -3,7 +3,7 @@ name: Terraform Deployment
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   terraform:
@@ -27,8 +27,8 @@ jobs:
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ AKIASGDCNOFPLIEFFW2F }}
+          AWS_SECRET_ACCESS_KEY: ${{ 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 }}
 
       - name: Notify on Success
         if: success()

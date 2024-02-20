@@ -1,6 +1,6 @@
 # Configure AWS provider
 provider "aws" {
-  region = "us-east-1" # Update with your desired region
+  region = "us-east-1" 
 }
 
 # Create VPC
@@ -12,26 +12,26 @@ resource "aws_vpc" "my_vpc" {
 resource "aws_subnet" "public_subnet_1" {
   vpc_id            = aws_vpc.my_vpc.id
   cidr_block        = "10.0.1.0/24"
-  availability_zone = "us-east-1a" # Update with your desired AZ
+  availability_zone = "us-east-1a" 
 }
 
 resource "aws_subnet" "public_subnet_2" {
   vpc_id            = aws_vpc.my_vpc.id
   cidr_block        = "10.0.2.0/24"
-  availability_zone = "us-east-1b" # Update with your desired AZ
+  availability_zone = "us-east-1b" 
 }
 
 # Create private subnets
 resource "aws_subnet" "private_subnet_1" {
   vpc_id            = aws_vpc.my_vpc.id
   cidr_block        = "10.0.3.0/24"
-  availability_zone = "us-east-1a" # Update with your desired AZ
+  availability_zone = "us-east-1a" 
 }
 
 resource "aws_subnet" "private_subnet_2" {
   vpc_id            = aws_vpc.my_vpc.id
   cidr_block        = "10.0.4.0/24"
-  availability_zone = "us-east-1b" # Update with your desired AZ
+  availability_zone = "us-east-1b" 
 }
 
 # Create security group for EC2 instance
@@ -61,7 +61,7 @@ resource "aws_instance" "web_server" {
   security_groups = [aws_security_group.nginx_sg.name]
 
   # Use existing SSH key pair
-  key_name = "your_ssh_key_pair_name_here" # Update with your SSH key pair name
+  key_name = "dumpa.pem" 
 
   # User data script to install and configure Nginx
   user_data = <<-EOF
